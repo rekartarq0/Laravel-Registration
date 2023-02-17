@@ -16,7 +16,8 @@ class isAdmin
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {   if (!Auth::user()->isAdmin()) {
+    {   
+        if (!Auth::user()->isAdmin()) {
             return response()->json([
                 'msg'=>'you cant visit to this page'
             ]);
